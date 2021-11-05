@@ -1,0 +1,13 @@
+<div>
+    <%= form_tag '/home/export' do %>
+    <%= hidden_field_tag   :btc_price_export, 'bitcoin_price' %>
+    <%= hidden_field_tag   :eth_price_export, 'ethereum_price' %>
+    <%= hidden_field_tag   :ada_price_export, 'cardano_price' %>
+    <%= submit_tag "Exportar CSV", url: link_to( '/' ,{ :controller => :home,
+    :action => :export }, format: 'csv'),class: "btn btn-warning" %>
+    <%= submit_tag "Exportar EXCEL", url: link_to( '/' ,{ :controller => :home,
+    :action => :export }, format: 'xls'),class: "btn btn-success" %>
+    <%= submit_tag "Exportar JSON", url: link_to( '/' ,{ :controller => :home,
+    :action => :export }, format: 'json'),class: "btn btn-info" %>
+<% end %>
+</div>
